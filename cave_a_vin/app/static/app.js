@@ -1294,6 +1294,9 @@ async function pageAjouter(main) {
       <label class="carte tuile-ajout"><span class="icone">${ic("camera")}</span><b>Photographier la bouteille</b>
         <span class="muted">D'abord l'étiquette, puis le verso${CAPACITES.ia.possible ? " : l'IA remplit la fiche et trouve le code-barres" : ""}${CAPACITES.detourage ? ". La bouteille est détourée et posée sur un fond de cave" : ""}</span>
         <input type="file" accept="image/*" capture="environment" hidden id="t-photo"></label>
+      <label class="carte tuile-ajout" id="t-galerie"><span class="icone">${ic("camera")}</span><b>Choisir 2 photos (étiquette + verso)</b>
+        <span class="muted">Depuis la galerie : sélectionnez l'étiquette puis le verso (le verso est facultatif)</span>
+        <input type="file" accept="image/*" multiple hidden id="t-galerie-in"></label>
       <a class="carte tuile-ajout secondaire" href="#/vins/nouveau" id="t-main"><span class="icone">${ic("crayon")}</span><b>Saisir à la main</b><span class="muted">Formulaire complet</span></a>
     </div>
     ${avertissementAndroid()}
@@ -1319,7 +1322,7 @@ async function pageAjouter(main) {
     $("#v-ignorer", zone).onclick = () => { zone.hidden = true; resolve(null); };
   });
 
-  const traiterPhoto = async (fichier) => {
+  const traiterPhoto = async (fichier, fichierVersoFourni = null) => {
     resultat.innerHTML = `<div class="carte traitement"><div class="apercu-ajout"><img id="apercu" alt="Photo de la bouteille"></div>
       <ul class="liste etapes"><li id="e-envoi">◌ Envoi de la photo…</li>
       ${CAPACITES.detourage ? `<li id="e-detour">◌ Détourage de la bouteille…</li>` : ""}
@@ -1354,12 +1357,18 @@ async function pageAjouter(main) {
       .finally(() => clearTimeout(lent));
 
     // le verso pendant que le détourage tourne
-    const fichierVerso = await demanderVerso();
+    const fichierVerso = fichierVersoFourni || await demanderVerso();
     let verso = null, codeVerso = null;
     if (fichierVerso) {
       etape("e-verso", "◌ Lecture du verso…");
-      [verso, codeVerso] = await Promise.all([redimensionner(fichierVerso, 1600), decoderImage(fichierVerso).catch(() => null)]);
-      etape("e-verso", codeVerso ? `✓ Verso reçu, code-barres ${codeVerso}` : "✓ Verso reçu");
+      try {
+        [verso, codeVerso] = await Promise.all([redimensionner(fichierVerso, 1600), decoderImage(fichierVerso).catch(() => null)]);
+        etape("e-verso", codeVerso ? `✓ Verso reçu, code-barres ${codeVerso}` : "✓ Verso reçu");
+      } catch {
+        verso = null;
+        codeVerso = null;
+        etape("e-verso", "– Verso illisible, ignoré");
+      }
     } else {
       etape("e-verso", "– Verso ignoré");
     }
@@ -1406,6 +1415,35 @@ async function pageAjouter(main) {
       ajout.cadrage = cadrage;
       $("#apercu", resultat).src = avecCle(`api/brouillons/${ident}/image?fond=${choix}&cadrage=${cadrage}`);
     }, avecCle(`api/brouillons/${ident}/image`), ajout.cadrage);
+  };
+
+  const confirmerPaire = (fichiers) => {
+    if (fichiers.length === 1) return traiterPhoto(fichiers[0]);
+    if (fichiers.length > 2) toast("Seules les 2 premières photos sont gardées");
+    const paire = fichiers.slice(0, 2);
+    let urls = [];
+    const liberer = () => { urls.forEach((u) => URL.revokeObjectURL(u)); urls = []; };
+    const afficher = () => {
+      liberer();
+      urls = paire.map((f) => URL.createObjectURL(f));
+      const noms = ["Étiquette", "Verso"];
+      resultat.innerHTML = `<div class="carte confirm-paire"><div class="paire-vignettes">
+        ${urls.map((u, i) => `<figure><img src="${u}" alt="${noms[i]}"><figcaption>${noms[i]}</figcaption></figure>`).join("")}</div>
+        <div class="actions"><button class="bouton" id="p-inverser">Inverser</button>
+          <button class="bouton" id="p-annuler">Annuler</button>
+          <button class="bouton primaire" id="p-importer">Importer</button></div></div>`;
+      $$("img", resultat).forEach((img) => { img.onerror = () => img.replaceWith(Object.assign(document.createElement("span"), { className: "muted", textContent: img.alt })); });
+      $("#p-inverser", resultat).onclick = () => { paire.reverse(); afficher(); };
+      $("#p-annuler", resultat).onclick = () => { liberer(); resultat.innerHTML = ""; };
+      $("#p-importer", resultat).onclick = () => { liberer(); traiterPhoto(paire[0], paire[1]); };
+    };
+    afficher();
+    montrer();
+  };
+  $("#t-galerie-in", main).onchange = (e) => {
+    const f = [...e.target.files];
+    e.target.value = "";
+    if (f.length) confirmerPaire(f);
   };
 
   $("#t-photo", main).onchange = (e) => e.target.files[0] && traiterPhoto(e.target.files[0]);

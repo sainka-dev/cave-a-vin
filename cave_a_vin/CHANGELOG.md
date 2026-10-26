@@ -1,5 +1,11 @@
 # Journal des modifications
 
+## 1.20.0
+
+- **Étiquette et verso en une seule sélection** : le nouveau bouton « Choisir 2 photos (étiquette + verso) » permet de
+  sélectionner les deux photos d'un coup depuis la galerie. Un aperçu s'affiche avant l'import, avec la possibilité
+  d'inverser les deux photos.
+
 ## 1.19.0
 
 - **Tessvine parle italien** 🇮🇹 grâce à une contribution de Matteo Alessani (merci !), complétée pour couvrir toute
