@@ -1,5 +1,11 @@
 # Journal des modifications
 
+## 1.20.3
+
+- Correction de version : le numéro interne de l'application (celui du journal de démarrage et de l'adresse des
+  fichiers de l'interface) était resté à 1.19.0. Il suit maintenant la version du module, ce qui force l'application
+  Home Assistant à recharger l'interface à chaque mise à jour.
+
 ## 1.20.2
 
 - **Deux emplacements, Étiquette et Verso** : le bouton « Choisir 2 photos (étiquette + verso) » ouvre un panneau avec
