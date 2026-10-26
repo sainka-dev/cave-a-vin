@@ -1294,9 +1294,8 @@ async function pageAjouter(main) {
       <label class="carte tuile-ajout"><span class="icone">${ic("camera")}</span><b>Photographier la bouteille</b>
         <span class="muted">D'abord l'étiquette, puis le verso${CAPACITES.ia.possible ? " : l'IA remplit la fiche et trouve le code-barres" : ""}${CAPACITES.detourage ? ". La bouteille est détourée et posée sur un fond de cave" : ""}</span>
         <input type="file" accept="image/*" capture="environment" hidden id="t-photo"></label>
-      <label class="carte tuile-ajout" id="t-galerie"><span class="icone">${ic("camera")}</span><b>Choisir 2 photos (étiquette + verso)</b>
-        <span class="muted">Depuis la galerie : sélectionnez l'étiquette puis le verso (le verso est facultatif)</span>
-        <input type="file" accept="image/*" multiple hidden id="t-galerie-in"></label>
+      <a class="carte tuile-ajout" href="#/ajouter" id="t-galerie"><span class="icone">${ic("camera")}</span><b>Choisir 2 photos (étiquette + verso)</b>
+        <span class="muted">Une photo pour l'étiquette, une pour le verso (facultatif), puis une seule lecture</span></a>
       <a class="carte tuile-ajout secondaire" href="#/vins/nouveau" id="t-main"><span class="icone">${ic("crayon")}</span><b>Saisir à la main</b><span class="muted">Formulaire complet</span></a>
     </div>
     ${avertissementAndroid()}
@@ -1417,22 +1416,30 @@ async function pageAjouter(main) {
     }, avecCle(`api/brouillons/${ident}/image`), ajout.cadrage);
   };
 
-  const confirmerPaire = (fichiers) => {
-    if (fichiers.length === 1) return traiterPhoto(fichiers[0]);
-    if (fichiers.length > 2) toast("Seules les 2 premières photos sont gardées");
-    const paire = fichiers.slice(0, 2);
+  // deux emplacements, une photo chacun : la sélection multiple n'est pas transmise par tous les WebView
+  const choisirPaire = () => {
+    const paire = [null, null];
     let urls = [];
     const liberer = () => { urls.forEach((u) => URL.revokeObjectURL(u)); urls = []; };
+    const noms = ["Étiquette", "Verso"];
     const afficher = () => {
       liberer();
-      urls = paire.map((f) => URL.createObjectURL(f));
-      const noms = ["Étiquette", "Verso"];
+      urls = paire.map((f) => (f ? URL.createObjectURL(f) : null));
       resultat.innerHTML = `<div class="carte confirm-paire"><div class="paire-vignettes">
-        ${urls.map((u, i) => `<figure><img src="${u}" alt="${noms[i]}"><figcaption>${noms[i]}</figcaption></figure>`).join("")}</div>
-        <div class="actions"><button class="bouton" id="p-inverser">Inverser</button>
+        ${noms.map((nom, i) => `<figure><label class="emplacement">${urls[i] ? `<img src="${urls[i]}" alt="${nom}">` : `<span class="vide">${ic("camera")}<span>Choisir la photo</span></span>`}
+          <input type="file" accept="image/*" hidden data-i="${i}"></label><figcaption>${nom}</figcaption></figure>`).join("")}</div>
+        <div class="actions"><label class="bouton">Choisir les 2 d'un coup<input type="file" accept="image/*" multiple hidden id="p-multiple"></label></div>
+        <div class="actions"><button class="bouton" id="p-inverser"${paire[0] && paire[1] ? "" : " disabled"}>Inverser</button>
           <button class="bouton" id="p-annuler">Annuler</button>
-          <button class="bouton primaire" id="p-importer">Importer</button></div></div>`;
+          <button class="bouton primaire" id="p-importer"${paire[0] ? "" : " disabled"}>Importer</button></div></div>`;
       $$("img", resultat).forEach((img) => { img.onerror = () => img.replaceWith(Object.assign(document.createElement("span"), { className: "muted", textContent: img.alt })); });
+      $$("input[type=file]", resultat).forEach((input) => {
+        input.onchange = () => { if (input.files[0]) { paire[Number(input.dataset.i)] = input.files[0]; afficher(); } };
+      });
+      $("#p-multiple", resultat).onchange = (e) => {
+        const f = [...e.target.files].slice(0, 2);
+        if (f.length) { paire[0] = f[0]; paire[1] = f[1] || paire[1]; afficher(); }
+      };
       $("#p-inverser", resultat).onclick = () => { paire.reverse(); afficher(); };
       $("#p-annuler", resultat).onclick = () => { liberer(); resultat.innerHTML = ""; };
       $("#p-importer", resultat).onclick = () => { liberer(); traiterPhoto(paire[0], paire[1]); };
@@ -1440,24 +1447,7 @@ async function pageAjouter(main) {
     afficher();
     montrer();
   };
-  const galerie = $("#t-galerie-in", main);
-  // vidé avant l'ouverture du sélecteur (et non après la lecture) : certains WebView invalident les fichiers sinon
-  galerie.onclick = () => { galerie.value = ""; };
-  let dejaRecu = false;
-  const recevoirGalerie = () => {
-    if (dejaRecu || !galerie.files.length) return;
-    dejaRecu = true;
-    setTimeout(() => { dejaRecu = false; }, 150);
-    try {
-      const f = [...galerie.files];
-      toast(`TEST : ${f.length} photo(s) reçue(s)`);
-      if (f.length) confirmerPaire(f);
-    } catch (err) {
-      toast(`TEST erreur : ${err && err.message || err}`, true, 8000);
-    }
-  };
-  galerie.onchange = recevoirGalerie;
-  galerie.oninput = recevoirGalerie;
+  $("#t-galerie", main).onclick = (e) => { e.preventDefault(); choisirPaire(); };
 
   $("#t-photo", main).onchange = (e) => e.target.files[0] && traiterPhoto(e.target.files[0]);
   $("#t-photo", main).closest("label").addEventListener("click", async (e) => {
