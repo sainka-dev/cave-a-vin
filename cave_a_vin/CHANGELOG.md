@@ -1,5 +1,11 @@
 # Journal des modifications
 
+## 1.20.4
+
+- Le bouton « Choisir les 2 d'un coup » est masqué dans l'application Home Assistant, dont le sélecteur de fichiers
+  ne transmet pas une sélection multiple. Il reste proposé dans un navigateur ; les deux emplacements Étiquette et
+  Verso fonctionnent partout.
+
 ## 1.20.3
 
 - Correction de version : le numéro interne de l'application (celui du journal de démarrage et de l'adresse des

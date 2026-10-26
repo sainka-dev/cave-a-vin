@@ -1422,13 +1422,15 @@ async function pageAjouter(main) {
     let urls = [];
     const liberer = () => { urls.forEach((u) => URL.revokeObjectURL(u)); urls = []; };
     const noms = ["Étiquette", "Verso"];
+    // le sélecteur de fichiers de l'application Home Assistant ne transmet pas une sélection multiple
+    const appHA = /Home Assistant\//.test(navigator.userAgent);
     const afficher = () => {
       liberer();
       urls = paire.map((f) => (f ? URL.createObjectURL(f) : null));
       resultat.innerHTML = `<div class="carte confirm-paire"><div class="paire-vignettes">
         ${noms.map((nom, i) => `<figure><label class="emplacement">${urls[i] ? `<img src="${urls[i]}" alt="${nom}">` : `<span class="vide">${ic("camera")}<span>Choisir la photo</span></span>`}
           <input type="file" accept="image/*" hidden data-i="${i}"></label><figcaption>${nom}</figcaption></figure>`).join("")}</div>
-        <div class="actions"><label class="bouton">Choisir les 2 d'un coup<input type="file" accept="image/*" multiple hidden id="p-multiple"></label></div>
+        ${appHA ? "" : `<div class="actions"><label class="bouton">Choisir les 2 d'un coup<input type="file" accept="image/*" multiple hidden id="p-multiple"></label></div>`}
         <div class="actions"><button class="bouton" id="p-inverser"${paire[0] && paire[1] ? "" : " disabled"}>Inverser</button>
           <button class="bouton" id="p-annuler">Annuler</button>
           <button class="bouton primaire" id="p-importer"${paire[0] ? "" : " disabled"}>Importer</button></div></div>`;
@@ -1436,7 +1438,8 @@ async function pageAjouter(main) {
       $$("input[type=file]", resultat).forEach((input) => {
         input.onchange = () => { if (input.files[0]) { paire[Number(input.dataset.i)] = input.files[0]; afficher(); } };
       });
-      $("#p-multiple", resultat).onchange = (e) => {
+      const multiple = $("#p-multiple", resultat);
+      if (multiple) multiple.onchange = (e) => {
         const f = [...e.target.files].slice(0, 2);
         if (f.length) { paire[0] = f[0]; paire[1] = f[1] || paire[1]; afficher(); }
       };
