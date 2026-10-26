@@ -1440,11 +1440,24 @@ async function pageAjouter(main) {
     afficher();
     montrer();
   };
-  $("#t-galerie-in", main).onchange = (e) => {
-    const f = [...e.target.files];
-    e.target.value = "";
-    if (f.length) confirmerPaire(f);
+  const galerie = $("#t-galerie-in", main);
+  // vidé avant l'ouverture du sélecteur (et non après la lecture) : certains WebView invalident les fichiers sinon
+  galerie.onclick = () => { galerie.value = ""; };
+  let dejaRecu = false;
+  const recevoirGalerie = () => {
+    if (dejaRecu || !galerie.files.length) return;
+    dejaRecu = true;
+    setTimeout(() => { dejaRecu = false; }, 150);
+    try {
+      const f = [...galerie.files];
+      toast(`TEST : ${f.length} photo(s) reçue(s)`);
+      if (f.length) confirmerPaire(f);
+    } catch (err) {
+      toast(`TEST erreur : ${err && err.message || err}`, true, 8000);
+    }
   };
+  galerie.onchange = recevoirGalerie;
+  galerie.oninput = recevoirGalerie;
 
   $("#t-photo", main).onchange = (e) => e.target.files[0] && traiterPhoto(e.target.files[0]);
   $("#t-photo", main).closest("label").addEventListener("click", async (e) => {
