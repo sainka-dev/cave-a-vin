@@ -3,9 +3,9 @@
 **FORK du projet https://github.com/Tessman404/cave-a-vin/ avec ajout d'upload multiple de photos.
 Sera fusionné via PR avec l'original si l'auteur accepte.**
 
-*[English version](https://github.com/Tessman404/cave-a-vin/blob/main/README.en.md)*
+*[English version](https://github.com/sainka-dev/cave-a-vin/blob/main/README.en.md)*
 
-**➡️ Nouveau ? Lisez la [notice rapide](https://github.com/Tessman404/cave-a-vin/blob/main/NOTICE.md) : installé et utilisé en 5 minutes.**
+**➡️ Nouveau ? Lisez la [notice rapide](https://github.com/sainka-dev/cave-a-vin/blob/main/NOTICE.md) : installé et utilisé en 5 minutes.**
 
 [![Soutenir Tessvine sur Ko-fi](https://img.shields.io/badge/Soutenir%20le%20projet-Ko--fi-7a1b33?logo=ko-fi&logoColor=white)](https://ko-fi.com/tessman)
 
@@ -13,23 +13,23 @@ Un logiciel de gestion de cave à vin, dans l'esprit d'Oeni, **qui s'intègre à
 
 | Tableau de bord | Sur téléphone |
 |---|---|
-| ![Tableau de bord](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/tableau-de-bord.png) | ![Mes vins sur mobile](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/mobile.png) |
+| ![Tableau de bord](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/tableau-de-bord.png) | ![Mes vins sur mobile](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/mobile.png) |
 
 | Plan de cave | Fiche d'un vin |
 |---|---|
-| ![Plan de cave](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/plan-de-cave.png) | ![Fiche d'un vin](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/fiche-vin.png) |
+| ![Plan de cave](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/plan-de-cave.png) | ![Fiche d'un vin](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/fiche-vin.png) |
 
 | Vue éclatée : les rangs de derrière s'écartent | Personnalisez votre rangée | Plan sur téléphone (thème sombre) |
 |---|---|---|
-| ![Vue éclatée d'un casier à deux rangs](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/vue-eclatee.png) | ![Réglage d'une rangée : largeur, hauteur, rang derrière, sens des bouteilles](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/reglage-rangee.png) | ![Plan de cave sur téléphone](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/plan-mobile-sombre.png) |
+| ![Vue éclatée d'un casier à deux rangs](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/vue-eclatee.png) | ![Réglage d'une rangée : largeur, hauteur, rang derrière, sens des bouteilles](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/reglage-rangee.png) | ![Plan de cave sur téléphone](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/plan-mobile-sombre.png) |
 
 | Une bouteille du plan | Mets & Vins |
 |---|---|
-| ![Fenêtre d'une bouteille](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/bouteille-mobile-sombre.png) | ![Mets & Vins sur téléphone](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/ce-soir-mobile.png) |
+| ![Fenêtre d'une bouteille](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/bouteille-mobile-sombre.png) | ![Mets & Vins sur téléphone](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/ce-soir-mobile.png) |
 
 *Captures réalisées avec une cave de démonstration (version 1.14).*
 
-**Nouveautés récentes** : vue éclatée des casiers à plusieurs rangs, **sens des bouteilles** rang par rang (goulot ou fond vers vous, alterné, allongé), bouteilles vues de face et plus serrées, « Personnalisez votre rangée » avec rangées identiques, version **anglaise** et devise réglable. Détail : [journal des modifications](https://github.com/Tessman404/cave-a-vin/blob/main/cave_a_vin/CHANGELOG.md).
+**Nouveautés récentes** : vue éclatée des casiers à plusieurs rangs, **sens des bouteilles** rang par rang (goulot ou fond vers vous, alterné, allongé), bouteilles vues de face et plus serrées, « Personnalisez votre rangée » avec rangées identiques, version **anglaise** et devise réglable. Détail : [journal des modifications](https://github.com/sainka-dev/cave-a-vin/blob/main/cave_a_vin/CHANGELOG.md).
 
 Ce qu'il fait :
 
@@ -72,12 +72,12 @@ Cette méthode demande **Home Assistant OS** ou **Supervised** (ceux qui ont le 
 
 ### Méthode A : depuis la boutique (recommandé)
 
-[![Ajouter le dépôt à Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FTessman404%2Fcave-a-vin)
+[![Ajouter le dépôt à Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fsainka-dev%2Fcave-a-vin)
 
 Cliquez sur le bouton ci-dessus, ou à la main :
 
 1. *Paramètres → Modules complémentaires → Boutique des modules complémentaires*.
-2. Menu **⋮** en haut à droite → **Dépôts** → collez `https://github.com/Tessman404/cave-a-vin` → **Ajouter**.
+2. Menu **⋮** en haut à droite → **Dépôts** → collez `https://github.com/sainka-dev/cave-a-vin` → **Ajouter**.
 3. Cherchez **Tessvine** dans la boutique → **Installer** (la construction prend une à deux minutes sur un Raspberry Pi).
 
 Les nouvelles versions apparaîtront ensuite comme des mises à jour classiques.
@@ -113,9 +113,9 @@ Le module complémentaire donne l'interface ; l'**intégration** donne les capte
 
 - **Avec HACS** (recommandé, pour recevoir les mises à jour) :
 
-  [![Ouvrir dans HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Tessman404&repository=cave-a-vin&category=integration)
+  [![Ouvrir dans HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sainka-dev&repository=cave-a-vin&category=integration)
 
-  ou à la main : *HACS → ⋮ → Dépôts personnalisés* → `https://github.com/Tessman404/cave-a-vin`, catégorie **Intégration** → installez **Tessvine**.
+  ou à la main : *HACS → ⋮ → Dépôts personnalisés* → `https://github.com/sainka-dev/cave-a-vin`, catégorie **Intégration** → installez **Tessvine**.
 - **À la main** : copiez le dossier **`custom_components/cave_a_vin`** dans le dossier `config/custom_components/` de Home Assistant (créez `custom_components` s'il n'existe pas).
 
 Puis **redémarrez Home Assistant**.
@@ -182,7 +182,7 @@ Astuce : sur téléphone, utilisez *Ajouter à l'écran d'accueil* depuis le nav
 
 ## 4 bis. Ajouter un vin : scan, photo et IA
 
-![Ajouter un vin](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/ajout-assiste.png)
+![Ajouter un vin](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/ajout-assiste.png)
 
 Bouton **+ Ajouter**, puis **Photographier la bouteille** :
 
@@ -194,7 +194,7 @@ Bouton **+ Ajouter**, puis **Photographier la bouteille** :
 
 **Garde estimée par l'IA** : la même IA estime la fenêtre de dégustation de chaque vin en cave, au démarrage du module puis chaque mois, et chaque nouveau vin dès son ajout. La fiche indique l'origine de la garde (« estimée par l'IA », avec sa justification et sa confiance, ou « saisie à la main »). Si vous corrigez une garde, l'IA ne la touche plus et affiche seulement sa suggestion ; le bouton **Garde par l'IA** la remplace à votre demande. Statuts : *À garder* → *Prêt à boire* → *À l'apogée* (plateau) → *Après l'apogée* → *À boire vite* (dernière année) → *Garde dépassée*.
 
-**Pas à pas pour activer l'IA (Google Gemini gratuit)** : voir la [notice rapide](https://github.com/Tessman404/cave-a-vin/blob/main/NOTICE.md#activer-lia-facultatif-gratuit-5-minutes).
+**Pas à pas pour activer l'IA (Google Gemini gratuit)** : voir la [notice rapide](https://github.com/sainka-dev/cave-a-vin/blob/main/NOTICE.md#activer-lia-facultatif-gratuit-5-minutes).
 
 **Ce qu'il faut pour la lecture d'étiquette** : Home Assistant 2025.8 ou plus récent, avec une intégration d'IA qui fournit une entité **« AI Task »** et qui comprend les images : OpenAI, Google Gemini, Anthropic (Claude), ou Ollama avec un modèle de vision (par exemple `qwen2.5vl`). Dans la cave, **Réglages → IA, photos & étiquettes** indique si tout est prêt et permet de choisir l'IA. La photo est alors envoyée à cette IA (et donc à son fournisseur si elle est en ligne).
 
@@ -300,7 +300,7 @@ cards:
 Pour Home Assistant « Container », un NAS ou un serveur :
 
 ```bash
-git clone https://github.com/Tessman404/cave-a-vin.git
+git clone https://github.com/sainka-dev/cave-a-vin.git
 cd cave-a-vin
 docker compose up -d
 ```
