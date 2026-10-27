@@ -1,5 +1,8 @@
 # Tessvine 🍷
 
+**FORK du projet https://github.com/Tessman404/cave-a-vin/ avec ajout d'upload multiple de photos.
+Sera fusionné via PR avec l'original si l'auteur accepte.**
+
 *[English version](https://github.com/Tessman404/cave-a-vin/blob/main/README.en.md)*
 
 **➡️ Nouveau ? Lisez la [notice rapide](https://github.com/Tessman404/cave-a-vin/blob/main/NOTICE.md) : installé et utilisé en 5 minutes.**
