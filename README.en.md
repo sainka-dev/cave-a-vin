@@ -1,8 +1,11 @@
 # Tessvine 🍷
 
-*[Version française](https://github.com/Tessman404/cave-a-vin/blob/main/README.md)*
+**FORK of the project https://github.com/Tessman404/cave-a-vin/ with multiple photo upload added.
+Will be merged into the original through a PR if the author accepts.**
 
-**➡️ New here? Read the [quick start](https://github.com/Tessman404/cave-a-vin/blob/main/NOTICE.en.md): installed and running in 5 minutes.**
+*[Version française](https://github.com/sainka-dev/cave-a-vin/blob/main/README.md)*
+
+**➡️ New here? Read the [quick start](https://github.com/sainka-dev/cave-a-vin/blob/main/NOTICE.en.md): installed and running in 5 minutes.**
 
 [![Support Tessvine on Ko-fi](https://img.shields.io/badge/Support%20the%20project-Ko--fi-7a1b33?logo=ko-fi&logoColor=white)](https://ko-fi.com/tessman)
 
@@ -12,19 +15,19 @@ The app speaks **English, French and Italian** and follows the language of your 
 
 | Dashboard | On a phone |
 |---|---|
-| ![Dashboard](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/dashboard.png) | ![My wines on a phone](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/mobile.png) |
+| ![Dashboard](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/dashboard.png) | ![My wines on a phone](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/mobile.png) |
 
 | Cellar map | Wine page |
 |---|---|
-| ![Cellar map](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/cellar-map.png) | ![Wine page](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/wine-page.png) |
+| ![Cellar map](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/cellar-map.png) | ![Wine page](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/wine-page.png) |
 
 | Exploded view: back rows move apart | Customize your shelf | Map on a phone (dark theme) |
 |---|---|---|
-| ![Exploded view of a two-row rack](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/exploded-view.png) | ![Shelf settings: width, height, row behind, bottle direction](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/shelf-settings.png) | ![Cellar map on a phone](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/map-mobile-dark.png) |
+| ![Exploded view of a two-row rack](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/exploded-view.png) | ![Shelf settings: width, height, row behind, bottle direction](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/shelf-settings.png) | ![Cellar map on a phone](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/map-mobile-dark.png) |
 
 | A bottle on the map | Food & Wine |
 |---|---|
-| ![Bottle window](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/bottle-mobile-dark.png) | ![Food & Wine on a phone](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/food-wine-mobile.png) |
+| ![Bottle window](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/bottle-mobile-dark.png) | ![Food & Wine on a phone](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/food-wine-mobile.png) |
 
 *Screenshots taken with a demo cellar (version 1.14).*
 
@@ -68,12 +71,12 @@ What it does:
 
 This method needs **Home Assistant OS** or **Supervised** (the ones with the *Settings → Add-ons* menu). Otherwise, see [section 7](#7-install-without-home-assistant-os-docker).
 
-[![Add the repository to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FTessman404%2Fcave-a-vin)
+[![Add the repository to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fsainka-dev%2Fcave-a-vin)
 
 Click the button above, or by hand:
 
 1. *Settings → Add-ons → Add-on store*.
-2. **⋮** menu (top right) → **Repositories** → paste `https://github.com/Tessman404/cave-a-vin` → **Add**.
+2. **⋮** menu (top right) → **Repositories** → paste `https://github.com/sainka-dev/cave-a-vin` → **Add**.
 3. Search for **Tessvine** in the store → **Install** (building takes one to two minutes on a Raspberry Pi).
 
 New versions then show up as regular updates.
@@ -102,9 +105,9 @@ The add-on gives you the app; the **integration** gives you sensors and actions 
 
 - **With HACS** (recommended, to get updates):
 
-  [![Open in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Tessman404&repository=cave-a-vin&category=integration)
+  [![Open in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sainka-dev&repository=cave-a-vin&category=integration)
 
-  or by hand: *HACS → ⋮ → Custom repositories* → `https://github.com/Tessman404/cave-a-vin`, category **Integration** → install **Tessvine**.
+  or by hand: *HACS → ⋮ → Custom repositories* → `https://github.com/sainka-dev/cave-a-vin`, category **Integration** → install **Tessvine**.
 - **By hand**: copy the **`custom_components/cave_a_vin`** folder into Home Assistant's `config/custom_components/` folder (create `custom_components` if needed).
 
 Then **restart Home Assistant**.
@@ -182,7 +185,7 @@ Tip: on a phone, use *Add to Home Screen* in the browser to get the cellar as an
 
 **Drinking window by AI**: the same AI estimates the drinking window of every wine in the cellar, when the add-on starts and then every month, and each new wine as soon as it's added. The wine page shows where the window comes from (“estimated by AI”, with its reasoning and confidence, or “entered by hand”). If you correct a window, the AI leaves it alone and only shows its suggestion; the **AI drinking window** button replaces it on request. Statuses: *Keep* → *Ready to drink* → *At its peak* → *Past its peak* → *Drink soon* (last year) → *Past its window*.
 
-**Step by step to turn on the AI (free Google Gemini)**: see the [quick start](https://github.com/Tessman404/cave-a-vin/blob/main/NOTICE.en.md#turn-on-the-ai-optional-free-5-minutes).
+**Step by step to turn on the AI (free Google Gemini)**: see the [quick start](https://github.com/sainka-dev/cave-a-vin/blob/main/NOTICE.en.md#turn-on-the-ai-optional-free-5-minutes).
 
 **What label reading needs**: Home Assistant 2025.8 or later, with an AI integration that provides an **“AI Task”** entity and understands images: OpenAI, Google Gemini, Anthropic (Claude), or Ollama with a vision model (for example `qwen2.5vl`). In Tessvine, **Settings → AI, photos & labels** tells you whether everything is ready and lets you choose the AI. The photo is then sent to that AI (and so to its provider if it's online).
 
@@ -268,7 +271,7 @@ cards:
 For Home Assistant “Container”, a NAS or a server:
 
 ```bash
-git clone https://github.com/Tessman404/cave-a-vin.git
+git clone https://github.com/sainka-dev/cave-a-vin.git
 cd cave-a-vin
 docker compose up -d
 ```
@@ -294,7 +297,7 @@ In **Settings → Backup & import**:
 
 ## 9. Developers
 
-The code (in French) and the API are described in the [French README](https://github.com/Tessman404/cave-a-vin/blob/main/README.md#8-pour-les-curieux--api-et-développement). Tests:
+The code (in French) and the API are described in the [French README](https://github.com/sainka-dev/cave-a-vin/blob/main/README.md#8-pour-les-curieux--api-et-développement). Tests:
 
 ```bash
 cd cave_a_vin && python3 -m unittest discover -s tests
@@ -304,4 +307,4 @@ cd cave_a_vin && python3 -m unittest discover -s tests
 
 ## Support the project
 
-Tessvine is free and built in my spare time. If it's useful to you, you can [buy me a coffee on Ko-fi](https://ko-fi.com/tessman) 🍷 Thank you!
+Tessvine is free and built in spare time by its author, [Tessman404](https://github.com/Tessman404). If it's useful to you, you can [buy the author a coffee on Ko-fi](https://ko-fi.com/tessman) 🍷 Thank you!

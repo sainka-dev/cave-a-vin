@@ -395,4 +395,4 @@ python3 -m pytest -c tests_ha/pytest.ini --rootdir . tests_ha
 
 ## Soutenir le projet
 
-Tessvine est gratuit et développé sur mon temps libre. S'il vous rend service, vous pouvez [m'offrir un café sur Ko-fi](https://ko-fi.com/tessman) 🍷 Merci !
+Tessvine est gratuit et développé sur le temps libre de son auteur, [Tessman404](https://github.com/Tessman404). S'il vous rend service, vous pouvez [offrir un café à l'auteur sur Ko-fi](https://ko-fi.com/tessman) 🍷 Merci !

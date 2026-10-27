@@ -1,10 +1,12 @@
 # Tessvine : notice rapide 🍷
 
-*[English version](https://github.com/Tessman404/cave-a-vin/blob/main/NOTICE.en.md)*
+*[English version](https://github.com/sainka-dev/cave-a-vin/blob/main/NOTICE.en.md)*
+
+*Fork du projet [Tessvine de Tessman404](https://github.com/Tessman404/cave-a-vin), l'auteur original.*
 
 Gérer sa cave à vin dans Home Assistant, en 5 minutes.
 
-![Tessvine](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/tableau-de-bord.png)
+![Tessvine](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/tableau-de-bord.png)
 
 ## 1. Installer (2 minutes)
 
@@ -12,9 +14,9 @@ Il faut **Home Assistant OS** (le cas de la plupart des installations : Raspberr
 
 1. Cliquez sur ce bouton depuis l'ordinateur ou le téléphone où Home Assistant est ouvert :
 
-   [![Ajouter le dépôt à Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FTessman404%2Fcave-a-vin)
+   [![Ajouter le dépôt à Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fsainka-dev%2Fcave-a-vin)
 
-   *(ou à la main : Paramètres → Modules complémentaires → Boutique → ⋮ → Dépôts → collez `https://github.com/Tessman404/cave-a-vin`)*
+   *(ou à la main : Paramètres → Modules complémentaires → Boutique → ⋮ → Dépôts → collez `https://github.com/sainka-dev/cave-a-vin`)*
 2. Cherchez **Tessvine** dans la boutique → **Installer** (une à deux minutes).
 3. Activez **Afficher dans la barre latérale**, puis **Démarrer**.
 
@@ -33,7 +35,7 @@ Il faut **Home Assistant OS** (le cas de la plupart des installations : Raspberr
 Vous avez plusieurs casiers ? **+ Rangée** pour ajouter une étagère dessous ou dessus, ou une colonne à côté ; le compteur « Rangées identiques » en ajoute plusieurs d'un coup.
 Dites si c'est une **cave électrique** : Tessvine vous préviendra quand une place s'y libère.
 
-![Plan de cave](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/plan-de-cave.png)
+![Plan de cave](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/plan-de-cave.png)
 
 ## 3. Ajouter un vin (1 minute)
 
@@ -51,7 +53,7 @@ Choisissez la cave et **touchez la place** où vous rangez la bouteille sur le p
 
 | Sur téléphone | Une bouteille du plan |
 |---|---|
-| ![Mes vins](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/mobile.png) | ![Bouteille](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/bouteille-mobile-sombre.png) |
+| ![Mes vins](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/mobile.png) | ![Bouteille](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/bouteille-mobile-sombre.png) |
 
 ## Activer l'IA (facultatif, gratuit, 5 minutes)
 
@@ -76,11 +78,11 @@ Bon à savoir :
 - **Notifications** (Réglages) : choisissez votre téléphone pour être prévenu des vins en fin de garde.
 - **Filtre à charbon** : sur le plan, touchez « Filtre » sur votre cave électrique, indiquez sa durée de vie et la date du dernier changement : Tessvine vous prévient deux semaines avant.
 - **Température de la cave** (Réglages) : choisissez vos capteurs, la température et l'humidité s'affichent sur l'accueil, en rouge si elles sortent de la bonne plage.
-- **Capteurs et actions dans Home Assistant** (tableaux de bord, Assist) : installez l'intégration avec HACS, voir le [guide complet](https://github.com/Tessman404/cave-a-vin/blob/main/README.md#2-ajouter-lintégration-capteurs-actions-envies).
+- **Capteurs et actions dans Home Assistant** (tableaux de bord, Assist) : installez l'intégration avec HACS, voir le [guide complet](https://github.com/sainka-dev/cave-a-vin/blob/main/README.md#2-ajouter-lintégration-capteurs-actions-envies).
 
 Vos données restent **chez vous**, dans Home Assistant, et sont incluses dans ses sauvegardes.
 
 ---
 
-Une question, une idée ? [Ouvrez un ticket sur GitHub](https://github.com/Tessman404/cave-a-vin/issues).
-Tessvine vous plaît ? [Offrez-moi un café sur Ko-fi](https://ko-fi.com/tessman) 🍷
+Une question, une idée ? [Ouvrez un ticket sur GitHub](https://github.com/sainka-dev/cave-a-vin/issues).
+Tessvine vous plaît ? [Offrez un café à son auteur, Tessman404, sur Ko-fi](https://ko-fi.com/tessman) 🍷

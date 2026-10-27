@@ -1,10 +1,12 @@
 # Tessvine: quick start 🍷
 
-*[Version française](https://github.com/Tessman404/cave-a-vin/blob/main/NOTICE.md)*
+*[Version française](https://github.com/sainka-dev/cave-a-vin/blob/main/NOTICE.md)*
+
+*Fork of [Tessvine by Tessman404](https://github.com/Tessman404/cave-a-vin), the original author.*
 
 Manage your wine cellar in Home Assistant, in 5 minutes. The app is in English or French, following your phone or browser (you can change it in **Settings → Display**, along with the currency).
 
-![Tessvine](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/dashboard.png)
+![Tessvine](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/dashboard.png)
 
 ## 1. Install (2 minutes)
 
@@ -12,9 +14,9 @@ You need **Home Assistant OS** (most installations: Raspberry Pi, Home Assistant
 
 1. Click this button from the computer or phone where Home Assistant is open:
 
-   [![Add the repository to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FTessman404%2Fcave-a-vin)
+   [![Add the repository to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fsainka-dev%2Fcave-a-vin)
 
-   *(or by hand: Settings → Add-ons → Add-on store → ⋮ → Repositories → paste `https://github.com/Tessman404/cave-a-vin`)*
+   *(or by hand: Settings → Add-ons → Add-on store → ⋮ → Repositories → paste `https://github.com/sainka-dev/cave-a-vin`)*
 2. Search for **Tessvine** in the store → **Install** (one to two minutes).
 3. Turn on **Show in sidebar**, then **Start**.
 
@@ -33,7 +35,7 @@ You need **Home Assistant OS** (most installations: Raspberry Pi, Home Assistant
 Several racks? **+ Shelf** adds a shelf below or above, or a column next to it; the “Identical shelves” counter adds several at once.
 Tell Tessvine if it's a **wine fridge**: it will let you know when a spot frees up.
 
-![Cellar map](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/cellar-map.png)
+![Cellar map](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/cellar-map.png)
 
 ## 3. Add a wine (1 minute)
 
@@ -51,7 +53,7 @@ Choose the cellar and **tap the spot** where you put the bottle on the map. That
 
 | On a phone | A bottle on the map |
 |---|---|
-| ![My wines](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/mobile.png) | ![Bottle](https://raw.githubusercontent.com/Tessman404/cave-a-vin/main/docs/en/bottle-mobile-dark.png) |
+| ![My wines](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/mobile.png) | ![Bottle](https://raw.githubusercontent.com/sainka-dev/cave-a-vin/main/docs/en/bottle-mobile-dark.png) |
 
 ## Turn on the AI (optional, free, 5 minutes)
 
@@ -77,11 +79,11 @@ Good to know:
 - **Notifications** (Settings): choose your phone to be told about wines reaching the end of their window.
 - **Carbon filter**: on the map, tap “Filter” on your wine fridge, enter its lifetime and the date it was last changed: Tessvine reminds you two weeks before.
 - **Cellar temperature** (Settings): choose your sensors, temperature and humidity show on the home page, in red if they leave the right range.
-- **Sensors and actions in Home Assistant** (dashboards, Assist): install the integration with HACS, see the [full guide](https://github.com/Tessman404/cave-a-vin/blob/main/README.en.md#2-add-the-integration-sensors-actions-wishlist).
+- **Sensors and actions in Home Assistant** (dashboards, Assist): install the integration with HACS, see the [full guide](https://github.com/sainka-dev/cave-a-vin/blob/main/README.en.md#2-add-the-integration-sensors-actions-wishlist).
 
 Your data stays **at home**, in Home Assistant, and is included in its backups.
 
 ---
 
-A question, an idea? [Open an issue on GitHub](https://github.com/Tessman404/cave-a-vin/issues).
-Enjoying Tessvine? [Buy me a coffee on Ko-fi](https://ko-fi.com/tessman) 🍷
+A question, an idea? [Open an issue on GitHub](https://github.com/sainka-dev/cave-a-vin/issues).
+Enjoying Tessvine? [Buy its author, Tessman404, a coffee on Ko-fi](https://ko-fi.com/tessman) 🍷
